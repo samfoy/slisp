@@ -107,7 +107,7 @@ parser' parser input = case parse parser "lisp" input of
   Right val -> return val
 
 symbol :: Parser Char
-symbol = oneOf "!?$%|*+-/:<=>@^_~"
+symbol = oneOf "!?$&%|*+-/:<=>@^_~"
 
 escapedChars :: Parser Char
 escapedChars =  do
