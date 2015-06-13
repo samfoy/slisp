@@ -3,7 +3,7 @@ import Types
 import Data.IORef
 import Control.Monad
 import Data.Maybe
-import Control.Monad.Error
+import Control.Monad.Except
 
 nullEnv :: IO Env
 nullEnv = newIORef []

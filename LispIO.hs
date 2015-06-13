@@ -2,7 +2,7 @@ module LispIO where
 import Types
 import Evaluate hiding (load)
 import Parser
-import Control.Monad.Error
+import Control.Monad.Except
 import System.IO
 import GHC.Base
 

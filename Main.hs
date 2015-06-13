@@ -1,5 +1,5 @@
 module Main(main) where
-import Control.Monad.Error
+import Control.Monad.Except
 import Types
 import Evaluate
 import Parser

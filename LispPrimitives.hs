@@ -3,7 +3,7 @@ import Types
 import LispIO
 import Environment
 import Evaluate
-import Control.Monad.Error
+import Control.Monad.Except
 
 primitiveBindings :: IO Env
 primitiveBindings = nullEnv >>= flip bindVars (map (makeFunction IOFunc) ioPrimitives

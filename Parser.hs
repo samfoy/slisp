@@ -4,7 +4,7 @@ import Text.ParserCombinators.Parsec hiding (spaces)
 import Numeric
 import GHC.Float
 import Control.Monad
-import Control.Monad.Error
+import Control.Monad.Except
 
 -- Exported Parsing Functions
 

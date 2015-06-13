@@ -1,10 +1,10 @@
 {-# LANGUAGE ExistentialQuantification #-}
 
 module Evaluate where
-import           Control.Monad.Error
+import           Control.Monad.Except
 import           Data.Maybe
 import           Types
-import GHC.Base
+import GHC.Base (assert)
 import           Environment
 import Parser
 

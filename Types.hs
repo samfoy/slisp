@@ -1,5 +1,5 @@
 module Types where
-import Control.Monad.Error
+import Control.Monad.Except
 import Data.IORef
 import Text.ParserCombinators.Parsec(ParseError)
 import GHC.Base
@@ -45,13 +45,10 @@ data LispError = ArgNumber Integer [Val]
                | Default String
 
 instance Show LispError where show = showError
-instance Error LispError where
-  noMsg = Default "An error has occured"
-  strMsg = Default
 
 type ThrowsError = Either LispError
 
-type IOThrowsError = ErrorT LispError IO
+type IOThrowsError = ExceptT LispError IO
 
 -- Helper Error Functions
 
@@ -67,7 +64,7 @@ liftT (Right val) = return val
 liftT (Left err) = throwError err
 
 runIOThrows :: IOThrowsError String -> IO String
-runIOThrows s = liftM extractValue (runErrorT (trapError s))
+runIOThrows s = liftM extractValue (runExceptT (trapError s))
 
 -- Closure Types
 
